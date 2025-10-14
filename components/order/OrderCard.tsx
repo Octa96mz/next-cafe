@@ -9,7 +9,6 @@ type OrderCardProps = {
 
 export default function OrderCard({ order } : OrderCardProps) {
 
-    
 
     return (
         <section
