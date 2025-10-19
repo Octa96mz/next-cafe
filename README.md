@@ -72,24 +72,6 @@ yarn dev
 
 Your app should now be running at http://localhost:3000
 
-🧠 Project Structure
-
-
-app/
- ├── admin/
- │   ├── orders/
- │   ├── products/
- │   └── ...
- │
- ├── orders/
- ├── api/
- └── ...
-
-prisma/
- ├── schema.prisma
- └── generated/
-
-
 🎯 Purpose
 
 Fresh Coffee aims to modernize and simplify order management in coffee shops, improving coordination between staff and ensuring a fast, efficient service experience for customers.
