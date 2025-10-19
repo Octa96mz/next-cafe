@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Fresh Coffee — Café Order Management System
 
-## Getting Started
+Fresh Coffee is a full-stack web application built with Next.js, TypeScript, and Prisma, designed to efficiently manage coffee shop orders and products.
 
-First, run the development server:
+This system streamlines the workflow between customers, the kitchen staff, and the administration panel, providing a seamless and modern experience for both staff and users.
 
-```bash
+🚀 Features
+🧩 Admin Panel
+
+Manage and visualize products with pagination and search.
+
+Create, edit, and delete products easily.
+
+Organize products by categories (e.g., Coffee, Cold Drinks, etc.).
+
+Clean and responsive UI for a smooth user experience.
+
+☕ Kiosk / Order Taking
+
+Intuitive interface for placing customer orders.
+
+Orders are automatically sent to the kitchen dashboard for preparation.
+
+Real-time status updates: In Preparation → Ready for Pickup.
+
+👨‍🍳 Kitchen Dashboard
+
+Displays all incoming orders in real time.
+
+Allows marking orders as “Completed”, updating the status across the system.
+
+Improves communication between kitchen staff and front service.
+
+📦 Completed Orders
+
+Displays all ready-to-pick-up orders for customers.
+
+Helps manage pickup flow and completed order tracking.
+
+🛠️ Tech Stack
+Area	Technologies
+Frontend	Next.js (App Router), React, Tailwind CSS
+Language	TypeScript
+Backend / API	Next.js Server Components and API Routes
+Database	Prisma ORM (compatible with PostgreSQL / MySQL / SQLite)
+Linting / Code Quality	ESLint with Next.js + TypeScript configuration
+Deployment	Vercel or any Node.js environment
+📦 Installation & Setup
+1. Clone the repository
+git clone https://github.com/Octa96mz/next-cafe
+cd next-cafe
+
+2. Install dependencies
+npm install
+# or
+yarn install
+
+3. Configure the environment
+
+Create a .env file in the project root and add your database URL and other environment variables:
+
+DATABASE_URL="your_database_connection_string"
+
+4. Generate Prisma client
+npx prisma generate
+
+5. Run the development server
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Your app should now be running at http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🧠 Project Structure
+app/
+ ├── admin/
+ │    ├── orders/
+ │    ├── products/
+ │    └── ...
+ ├── orders/
+ ├── api/
+ └── ...
+prisma/
+ ├── schema.prisma
+ └── generated/
 
-## Learn More
+🎯 Purpose
 
-To learn more about Next.js, take a look at the following resources:
+Fresh Coffee aims to modernize and simplify order management in coffee shops, improving coordination between staff and ensuring a fast, efficient service experience for customers.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🧑‍💻 Author
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Developed with ☕ and ❤️ by Octa96mz
