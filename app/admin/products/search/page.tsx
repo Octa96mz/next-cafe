@@ -18,11 +18,18 @@ async function searchProduct(searchTerm: string) {
     return products
 }
 
-export default async function SearchPage({ searchParams }: { searchParams: { search: string } }) {
-    const products = await searchProduct(searchParams.search)
+export default async function SearchPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ search?: string }>
+}) {
+  const { search } = await searchParams; 
+  const query = search || '';
 
-    return (
-        <>
+  const products = await searchProduct(query)
+
+  return (
+      <>
 
             <Heading>Resultado de búsqueda</Heading>
 

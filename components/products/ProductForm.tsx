@@ -67,8 +67,8 @@ export default async function ProductForm({product}: ProductFormProps) {
                 </select>
             </div>
 
-            <ImageUpload 
-                image={product?.image} />
+            <ImageUpload image={product?.image ?? undefined} />
+
         </>
     )
 }

@@ -35,13 +35,11 @@ export const ProductSchema = z.object({
     .min(1, { message: "El Nombre del Producto no puede ir vacio" }),
 
   price: z.coerce.number({
-    required_error: "El Precio es obligatorio",
-    invalid_type_error: "El Precio debe ser un número válido",
+    message: "El Precio es obligatorio y debe ser un número válido",
   }).min(1, { message: "Precio no válido" }),
 
   categoryId: z.coerce.number({
-    required_error: "La Categoría es Obligatoria",
-    invalid_type_error: "La Categoría debe ser un número válido",
+    message: "La Categoría es Obligatoria y debe ser un número válido",
   }).min(1, { message: "La Categoría es Obligatoria" }),
   image: z.string().min(1, { message: "La Imagen es Obligatoria" })
 })

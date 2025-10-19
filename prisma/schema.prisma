@@ -20,7 +20,7 @@ model Product {
   id          Int      @id @default(autoincrement())
   name        String    
   price       Float 
-  image    String?   
+  image       String   @default("/default.jpg")
   categoryId  Int      
   category    Category @relation(fields: [categoryId], references: [id])
   orderProducts OrderProducts[]
