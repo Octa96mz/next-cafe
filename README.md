@@ -73,17 +73,22 @@ yarn dev
 Your app should now be running at http://localhost:3000
 
 🧠 Project Structure
+
+
 app/
  ├── admin/
- │    ├── orders/
- │    ├── products/
- │    └── ...
+ │   ├── orders/
+ │   ├── products/
+ │   └── ...
+ │
  ├── orders/
  ├── api/
  └── ...
+
 prisma/
  ├── schema.prisma
  └── generated/
+
 
 🎯 Purpose
 
