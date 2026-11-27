@@ -40,4 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+/generated/
 /app/generated/prisma
+
+# restos de descargas en Windows
+*:Zone.Identifier
