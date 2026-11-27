@@ -1,81 +1,94 @@
-Fresh Coffee — Café Order Management System
+# Fresh Coffee
 
-Fresh Coffee is a full-stack web application built with Next.js, TypeScript, and Prisma, designed to efficiently manage coffee shop orders and products.
+Sistema de gestión de pedidos para una cafetería, hecho con Next.js, TypeScript y Prisma. Conecta a los clientes, la cocina y el panel de administración.
 
-This system streamlines the workflow between customers, the kitchen staff, and the administration panel, providing a seamless and modern experience for both staff and users.
+## Funcionalidades
 
-🚀 Features
-🧩 Admin Panel
+### Panel de administración
+- Listado de productos con paginación y búsqueda.
+- Alta, edición y borrado de productos.
+- Productos organizados por categorías.
 
-Manage and visualize products with pagination and search.
+### Toma de pedidos
+- Interfaz para registrar el pedido de un cliente.
+- Los pedidos llegan al panel de cocina para prepararse.
 
-Create, edit, and delete products easily.
+### Panel de cocina
+- Muestra los pedidos entrantes.
+- Permite marcar un pedido como completado.
 
-Organize products by categories (e.g., Coffee, Cold Drinks, etc.).
+### Pedidos listos
+- Lista los pedidos listos para retirar.
 
-Clean and responsive UI for a smooth user experience.
+## Tecnologías
 
-☕ Kiosk / Order Taking
+| Área | Tecnología |
+|---|---|
+| Frontend | Next.js 15 (App Router), React 19, Tailwind CSS 4 |
+| Lenguaje | TypeScript |
+| Base de datos | PostgreSQL con Prisma ORM |
+| Imágenes | Cloudinary (next-cloudinary) |
+| Calidad de código | ESLint, `tsc` |
 
-Intuitive interface for placing customer orders.
+## Requisitos
 
-Orders are automatically sent to the kitchen dashboard for preparation.
+- Node.js 20.9 o superior (se recomienda la versión de `.nvmrc`).
+- npm.
+- Una base de datos PostgreSQL accesible.
+- Una cuenta de Cloudinary con un upload preset sin firma llamado `preset-cf`.
 
-Real-time status updates: In Preparation → Ready for Pickup.
+## Puesta en marcha
 
-👨‍🍳 Kitchen Dashboard
+1. Clonar el repositorio.
 
-Displays all incoming orders in real time.
+   ```bash
+   git clone https://github.com/Octa96mz/next-cafe
+   cd next-cafe
+   ```
 
-Allows marking orders as “Completed”, updating the status across the system.
+2. Instalar las dependencias. El script `postinstall` genera el cliente de Prisma.
 
-Improves communication between kitchen staff and front service.
+   ```bash
+   npm ci
+   ```
 
-📦 Completed Orders
+3. Crear un fichero `.env` en la raíz con estas variables.
 
-Displays all ready-to-pick-up orders for customers.
+   ```
+   DATABASE_URL="postgresql://usuario:contrasena@localhost:5432/next_cafe?schema=public"
+   NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME="nombre-de-tu-cloud"
+   ```
 
-Helps manage pickup flow and completed order tracking.
+4. Aplicar las migraciones a la base de datos.
 
-🛠️ Tech Stack
-Area	Technologies
-Frontend	Next.js (App Router), React, Tailwind CSS
-Language	TypeScript
-Backend / API	Next.js Server Components and API Routes
-Database	Prisma ORM (compatible with PostgreSQL / MySQL / SQLite)
-Linting / Code Quality	ESLint with Next.js + TypeScript configuration
-Deployment	Vercel or any Node.js environment
-📦 Installation & Setup
-1. Clone the repository
-git clone https://github.com/Octa96mz/next-cafe
-cd next-cafe
+   ```bash
+   npm run db:migrate
+   ```
 
-2. Install dependencies
-npm install
-# or
-yarn install
+5. Cargar los datos iniciales (categorías y productos).
 
-3. Configure the environment
+   ```bash
+   npm run db:seed
+   ```
 
-Create a .env file in the project root and add your database URL and other environment variables:
+6. Arrancar el servidor de desarrollo en http://localhost:3000.
 
-DATABASE_URL="your_database_connection_string"
+   ```bash
+   npm run dev
+   ```
 
-4. Generate Prisma client
-npx prisma generate
+## Comandos
 
-5. Run the development server
-npm run dev
-# or
-yarn dev
+| Comando | Qué hace |
+|---|---|
+| `npm run dev` | Servidor de desarrollo |
+| `npm run lint` | Análisis con ESLint |
+| `npm run typecheck` | Comprobación de tipos con TypeScript |
+| `npm run build` | Compilación de producción (requiere `DATABASE_URL` definida) |
+| `npm run start` | Servidor de producción tras `build` |
+| `npm run db:migrate` | Aplica las migraciones existentes |
+| `npm run db:seed` | Carga los datos iniciales |
 
+## Autor
 
-Your app should now be running at http://localhost:3000
-
-🎯 Purpose
-
-Fresh Coffee aims to modernize and simplify order management in coffee shops, improving coordination between staff and ensuring a fast, efficient service experience for customers.
-
-🧑‍💻 Author
-
-Developed with ☕ and ❤️ by Octa96mz
+Octa96mz
