@@ -52,11 +52,10 @@ Sistema de gestión de pedidos para una cafetería, hecho con Next.js, TypeScrip
    npm ci
    ```
 
-3. Crear un fichero `.env` en la raíz con estas variables.
+3. Crear el fichero `.env` a partir de la plantilla y rellenar los valores.
 
-   ```
-   DATABASE_URL="postgresql://usuario:contrasena@localhost:5432/next_cafe?schema=public"
-   NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME="nombre-de-tu-cloud"
+   ```bash
+   cp .env.example .env
    ```
 
 4. Aplicar las migraciones a la base de datos.
